@@ -268,15 +268,7 @@ def test8():
 
 #tese4:快速排序，test8:基数排序，相对比较快
 #多使用快速排序法
-if  __name__ == "__main__" :test1()
-
-
-
-
-
-
-
-
-
+if  __name__ == "__main__" :
+	test1()
 
 
