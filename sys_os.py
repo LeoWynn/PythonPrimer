@@ -72,3 +72,7 @@ def test2():
     print copyright
     print sys.api_version
     print sys.version_info
+
+if __name__ == "__main__":
+	test2()
+
