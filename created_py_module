@@ -1,0 +1,99 @@
+#!/usr/bin/env python
+#-*- coding: UTF-8 -*-
+
+'''Module:CreatedPyModulehome_path
+Created by Leo Wen
+'''
+
+import os
+import sys
+import datetime
+
+
+class CreatedPyModule(object):
+    '''CreatedPyModule
+    '''
+
+    def __init__(self):
+        '''get current home path:
+        get input argv:module name,
+        get current time
+        '''
+        self.home_path = os.getcwd()
+        #self.home_path = os.path.split(os.path.realpath(__file__))[0]    #脚本执行的路径
+        self.module_name = sys.argv[1]
+        self.module_path = self.home_path + '/' + self.module_name + '.py'
+        self.current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        self.created_module_file()
+
+    def created_module_file(self):
+        '''
+        #chech module_path,if have existed then select if you wanna replace the primary file.
+        '''
+        if os.path.exists(self.module_path):
+            while True:
+                print 'The module:%s has existed, Would you want to replace it?' % self.module_name
+                response = raw_input('Please enter Y/N: ')
+                if response == 'Y' or response == 'y':
+                    print 'Delete the the primary file... ...'
+                    os.remove(self.module_path)        #delete file
+                    self._created_file(self.module_path)
+                    break
+                else:
+                    print 'Quit to created the module... ...'
+                    print 'Open the existed module... ...'
+                    cmd = 'xdg-open ' + self.module_path
+                    os.system(cmd)
+                    exit(0)
+        else:
+            self._created_file(self. module_path)
+
+    def _created_file(self, file_name):
+        '''only created a file'''
+        try:
+            file_id = open(file_name, 'w')
+            print 'Created module:%s successfully.' % file_name
+        except Exception, msg:
+            print Exception, ':', msg
+            print 'Fail to created module:%s.' % file_name
+        finally:
+            file_id.close
+
+    def created_module_templet(self):
+        '''open module'''
+        try:
+            file_id = open(self.module_path, 'w')
+            file_id.write('#!/usr/bin/env python\n')
+            file_id.write('#-*- coding: UTF-8 -*-\n')
+            file_id.write('\n')
+            file_id.write('\n')
+            file_id.write('\'\'\'Module: ' + self.module_name + '\n')
+            file_id.write('Created by Leo Wen on ' + str(self.current_time) + '\n')
+            file_id.write('\'\'\'\n')
+            file_id.write('\n')
+            file_id.write('def test():' + '\n')
+            file_id.write('    \'\'\'Test\'\'\'\n')
+            file_id.write('    print \'Please test here.\'' + '\n')
+            file_id.write('\n\n')
+            file_id.write('if __name__ == \'__main__\':' + '\n')
+            file_id.write('    test()' + '\n')
+            #open module with gedit
+            cmd = 'chmod 755  ' + self.module_path
+            os.system(cmd)
+            cmd1 = 'xdg-open ' + self.module_path
+            os.system(cmd1)
+        except Exception, msg:
+            print Exception, ':', msg
+            print 'Fail to created module templet:%s.' % self.module_name
+        finally:
+            file_id.close
+
+
+def test():
+    '''Test'''
+    create = CreatedPyModule()
+    create.created_module_templet()
+
+
+if __name__ == "__main__":
+    test()
