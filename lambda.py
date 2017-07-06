@@ -16,14 +16,6 @@ class lambda1(object):
 	def __init__(self): 
 		pass 
 
-
-
-
-
-
-
-
-
 '''
 Python 允许你定义一种单行的小函数。
 如果你的函数非常简单,只有一个表达式,不包含命令,可以考虑 lambda 函数。
@@ -59,27 +51,13 @@ def test1():
 	# 返回所有元素相乘的结果
 	print reduce(lambda x, y: x * y, li)
 	#120
-
-
-
-
-
-
-
-
-
-
+	
+def test2():
+	'''一行代码计算任何数的阶乘
+	int.__mul__整数的乘法'''
+	result = (lambda k: reduce(int.__mul__, range(1,k+1),1))(3)
+	print(result)
 
 if __name__ == '__main__': 
 	#test() 
 	test1()
-
-
-
-
-
-
-
-
-
-
