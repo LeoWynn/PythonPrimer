@@ -91,5 +91,6 @@ def test():
     tree.sum_tree(t)
     tree.lookup(t)
 
+    
 if __name__ == '__main__':
     test()
