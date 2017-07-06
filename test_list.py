@@ -27,20 +27,18 @@ def test1():
 	print name,len(name)
 	name.pop(2)
 	print name,len(name)
+def test2():
+	'''	
+	找到列表中出现最频繁的数
+	max(...)
+	max(iterable[, key=func]) -> value
+	max(a, b, c, ...[, key=func]) -> value
+	'''
+	test = [1,2,3,4,2,2,3,1,4,4,4]
+	print test.count(1)
+	print(max(set(test), key=test.count))
 
 
-
-
-
-
-if __name__ == "__main__":test1()
-
-
-
-
-
-
-
-
-
+if __name__ == "__main__":
+	test1()
 
