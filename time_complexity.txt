@@ -1,0 +1,24 @@
+Python时间复杂度：
+
+1 常见时间复杂度的数量级：
+1,Log2n ,n ,nLog2n ,n的平方,n的三次方,2的n次方,n!
+Ο(1)＜Ο(log2n)＜Ο(n)＜Ο(nlog2n)＜Ο(n2)＜Ο(n3)＜…＜Ο(2n)＜Ο(n!)Ο(1)
+
+2 list
+Copy : O(n)
+append: O(1)
+insert : O(n)
+delete: O(n)
+x in list: O(n)
+min(s)/max(s): O(n)
+len: O(1)
+
+3 set
+x in set: O(n)
+
+4 
+简单排序： O（n^2)
+快速排序： O(nlog2n)
+堆排序： O(nlog2n)
+归并排序：O(nlog2n)
+
