@@ -25,7 +25,7 @@ def test1():
     print 'Sub process done.'
 
 def test2():
-    #进程池，注意要用apply_async，如果落下async，就变成阻塞版本了。processes=4是最多并发进程数量。
+    #进程池，注意要用apply_async，如果用async，就变成阻塞版本了。processes=5是最多并发进程数量。
     pool = multiprocessing.Pool(processes = 5)
     for i in range(10):
         msg = 'hello %d' % (i)
