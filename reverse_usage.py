@@ -13,7 +13,7 @@ def test():
     print 'Please test here.'
     # 翻转列表本身
     testList = [1, 3, 5]
-    testList.reverse()
+    testList.reverse()  #对象的方法改变列表对象本身
     print(testList)
     
     #在一个循环中翻转并迭代输出
