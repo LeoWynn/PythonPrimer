@@ -7,7 +7,13 @@ Created by Leo Wen on 2017-07-10 21:38:26
 '''
 class A(object):
     '''Python其实有3个方法,即静态方法(staticmethod),类方法(classmethod)和实例方法,'''
+    #类变量
+    age = 20
 
+    def __init__(self):
+        #实例变量，实例后才可以调用
+        self.name = 'Leo'
+        
     def foo(self,x):
         print "executing foo(%s,%s)"%(self,x)
 
@@ -38,7 +44,8 @@ def test():
     executing class_foo(<class '__main__.A'>,hello)
     executing static_foo(hello)
     '''
-
+    print A.age
+    print a.name
 
 if __name__ == '__main__':
     test()
