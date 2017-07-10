@@ -17,3 +17,6 @@ poll改善了第一个缺点
 epoll改了三个缺点.
 
 关于epoll的: http://www.cnblogs.com/my_life/articles/3968782.html 
+
+
+2. 虚拟内存技术 
