@@ -8,7 +8,15 @@
 import os
 import sys
 
+'''
+新式类是广度优先,旧式类是深度优先
 
+类和类型是不同的，如a是ClassA的一个实例，那么a.__class__返回 ‘ class    __main__.ClassA‘ ，type(a)返回总是<type 'instance'>。而引入新类后，比如ClassB是个新类，b是ClassB的实例，b.__class__和type(b)都是返回‘class '__main__.ClassB' ，这样就统一了。
+
+新类：为了统一类(class)和类型(type)。
+在Python3里面，不存在这些问题了，因为所有的类都是object类的子类（隐式）
+为了向前兼容，默认情况下用户定义的类为经典类，新类需要继承自所有类的基类 object 或者继承自object的新类。
+'''
 
 class oldClass():	#经典类，旧式类
 	def __init__(self):
@@ -17,14 +25,7 @@ class oldClass():	#经典类，旧式类
 class newClass(object):		#新类
 	def __init__(self):
 		pass
-'''
-类和类型是不同的，如a是ClassA的一个实例，那么a.__class__返回 ‘ class    __main__.ClassA‘ ，type(a)返回总是<type 'instance'>。而引入新类后，比如ClassB是个新类，b是ClassB的实例，b.__class__和type(b)都是返回‘class '__main__.ClassB' ，这样就统一了。
 
-新类：为了统一类(class)和类型(type)。
-在Python3里面，不存在这些问题了，因为所有的类都是object类的子类（隐式）
-为了向前兼容，默认情况下用户定义的类为经典类，新类需要继承自所有类的基类 object 或者继承自object的新类。
-
-'''
 def test1():
 	c1 = oldClass()
 	c2 = newClass()
@@ -100,14 +101,5 @@ def test3():
 	print f.BAR
 
 
-if __name__ == "__main__":test3()
-
-
-
-
-
-
-
-
-
-
+if __name__ == "__main__":
+	test3()
