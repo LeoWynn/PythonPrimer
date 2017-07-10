@@ -16,12 +16,6 @@ class typeConversion(object):
 	def __init__(self): 
 		pass 
 
-
-
-
-
-
-
 '''
 常见类型转换，type conversion
 
@@ -44,7 +38,6 @@ hex(x)	将一个整数转换为一个十六进制字符串
 oct(x)	将一个整数转换为一个八进制字符串
 '''
 
-
 def test(): 
 	name = 'hello'
 	print list(name)
@@ -53,25 +46,5 @@ def test():
 	print set(name)
 	
 
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__': 
 	test() 
-
-
-
-
-
-
-
-
-
-
