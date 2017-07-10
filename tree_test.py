@@ -76,8 +76,18 @@ class Tree(object):
                 self.sum_tree(tree.r_child,sums1)
                 del sums1
 
+                
+isSameTree(p, q):
+    #求两棵树是否相同 
+    if p == None and q == None:
+        return True
+    elif p and q :
+        return p.val == q.val and isSameTree(p.left,q.left) and isSameTree(p.right,q.right)
+    else :
+        return False
+    
 def test():
-    '''Test '''   
+    '''Test '''   
     t = TreeNode()
     tree = Tree()
     tree.created_tree(t,3)
